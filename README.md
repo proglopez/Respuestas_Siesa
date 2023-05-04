@@ -1,7 +1,7 @@
 # Respuestas_Siesa
 Respuestas de prueba técnica Siesa (Desarrollador Estándar)
 
-Punto 17.Algoritmo y Pseudocódigo
+# Punto 17.Algoritmo y Pseudocódigo
 # Algoritmo de división de dos números enteros
 
 Este algoritmo permite dividir dos números enteros y mostrar el resultado de la división. Si el segundo número es cero, se mostrará un mensaje de error indicando que la división por cero no está permitida.
