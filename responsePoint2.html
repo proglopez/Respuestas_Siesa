@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mi Canvas</title>
+</head>
+<body>
+	<canvas id="micanvas" width="200" height="200"></canvas>
+	<script>
+		var canvas = document.getElementById("micanvas");
+		var ctx = canvas.getContext("2d");
+
+		ctx.moveTo(10,10);
+		ctx.lineTo(180,180);
+
+		ctx.strokeStyle = "#f00";
+		ctx.stroke();
+	</script>
+</body>
+</html>
