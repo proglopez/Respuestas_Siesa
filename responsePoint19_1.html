@@ -26,6 +26,11 @@
 		// Acceder a los subárboles de un nodo
 		console.log(raiz.subarboles); // [nodo1, nodo2, nodo3]
 		console.log(nodo2.subarboles); // []
+
+		// Mostrar el árbol en el HTML
+		const pre = document.createElement('pre');
+		pre.textContent = JSON.stringify(raiz, null, 2);
+		document.body.appendChild(pre);
 	</script>
 </body>
 </html>
