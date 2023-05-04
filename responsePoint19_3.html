@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Peso promedio de árbol en JavaScript</title>
+</head>
+<body>
+	<script>
+		// Función recursiva para calcular el peso de un árbol
+		function pesoArbol(nodo) {
+		  let peso = nodo.peso;
+		  for (const subarbol of nodo.subarboles) {
+		    peso += pesoArbol(subarbol);
+		  }
+		  return peso;
+		}
+
+		// Función recursiva para contar el número de nodos en un árbol
+		function contarNodos(nodo) {
+		  let contador = 1;
+		  for (const subarbol of nodo.subarboles) {
+		    contador += contarNodos(subarbol);
+		  }
+		  return contador;
+		}
+
+		// Función para calcular el peso promedio de un árbol
+		function pesoPromedioArbol(nodo) {
+		  const pesoTotal = pesoArbol(nodo);
+		  const numNodos = contarNodos(nodo);
+		  const pesoPromedio = pesoTotal / numNodos;
+		  return pesoPromedio;
+		}
+
+		// Crear el árbol
+		const nodo1 = { peso: 4, subarboles: [] };
+		const nodo2 = { peso: 7, subarboles: [] };
+		const nodo3 = { peso: 20, subarboles: [] };
+		const raiz = { peso: 0, subarboles: [nodo1, nodo2, nodo3] };
+
+		// Calcular el peso promedio del árbol
+		const pesoPromedio = pesoPromedioArbol(raiz);
+		console.log(pesoPromedio); // 10.333333333333334
+
+		// Mostrar el resultado en el HTML
+		const resultado = document.createElement('p');
+		resultado.textContent = "El peso promedio del árbol es: " + pesoPromedio;
+		document.body.appendChild(resultado);
+	</script>
+</body>
+</html>
