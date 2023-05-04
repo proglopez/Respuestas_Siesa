@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Altura de árbol en JavaScript</title>
+</head>
+<body>
+	<script>
+		// Función recursiva para calcular la altura de un árbol
+		function alturaArbol(nodo) {
+		  let maxAlturaSubarboles = 0;
+		  for (const subarbol of nodo.subarboles) {
+		    const alturaSubarbol = alturaArbol(subarbol);
+		    if (alturaSubarbol > maxAlturaSubarboles) {
+		      maxAlturaSubarboles = alturaSubarbol;
+		    }
+		  }
+		  return maxAlturaSubarboles + 1;
+		}
+
+		// Crear el árbol
+		const nodo1 = { peso: 4, subarboles: [] };
+		const nodo2 = { peso: 7, subarboles: [] };
+		const nodo3 = { peso: 20, subarboles: [] };
+		const raiz = { peso: 0, subarboles: [nodo1, nodo2, nodo3] };
+
+		// Calcular la altura del árbol
+		const altura = alturaArbol(raiz);
+		console.log(altura); // 3
+
+		// Mostrar el resultado en el HTML
+		const resultado = document.createElement('p');
+		resultado.textContent = "La altura del árbol es: " + altura;
+		document.body.appendChild(resultado);
+	</script>
+</body>
+</html>
