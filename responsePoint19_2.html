@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Peso de árbol en JavaScript</title>
+</head>
+<body>
+	<script>
+		// Función recursiva para calcular el peso de un árbol
+		function pesoArbol(nodo) {
+		  let peso = nodo.peso;
+		  for (const subarbol of nodo.subarboles) {
+		    peso += pesoArbol(subarbol);
+		  }
+		  return peso;
+		}
+
+		// Crear el árbol
+		const nodo1 = { peso: 4, subarboles: [] };
+		const nodo2 = { peso: 7, subarboles: [] };
+		const nodo3 = { peso: 20, subarboles: [] };
+		const raiz = { peso: 0, subarboles: [nodo1, nodo2, nodo3] };
+
+		// Calcular el peso del árbol
+		const pesoTotal = pesoArbol(raiz);
+		console.log(pesoTotal); // 31
+
+		// Mostrar el resultado en el HTML
+		const resultado = document.createElement('p');
+		resultado.textContent = "El peso del árbol es: " + pesoTotal;
+		document.body.appendChild(resultado);
+	</script>
+</body>
+</html>
