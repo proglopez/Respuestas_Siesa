@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Título página</title>
+</head>
+<body>
+	<script>
+		function convertirBase(x, k) {
+		  let residuos = [];
+		  while (x > 0) {
+		    residuos.unshift(x % k);
+		    x = Math.floor(x / k);
+		  }
+		  return residuos.join("");
+		}
+
+		// ejemplo de uso de la función
+		let numero = 42;
+		let base = 2;
+		let resultado = convertirBase(numero, base);
+		console.log("El número " + numero + " en base " + base + " es: " + resultado);
+	</script>
+</body>
+</html>
